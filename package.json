@@ -2,5 +2,24 @@
   "dependencies": {
     "crypto-js": "^4.1.1",
     "elliptic": "^6.5.4"
-  }
+  },
+  "name": "chikecoin_terminal",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chike12/ChikeCoin_terminal.git"
+  },
+  "keywords": [],
+  "author": "Cesar Llontop",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chike12/ChikeCoin_terminal/issues"
+  },
+  "homepage": "https://github.com/chike12/ChikeCoin_terminal#readme",
+  "description": ""
 }
