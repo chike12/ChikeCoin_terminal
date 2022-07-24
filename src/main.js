@@ -11,7 +11,7 @@ const myWalletAddress = myKey.getPublic('hex');
 
 let chikeCoin = new Blockchain();
 
-const tx1 = new Transation(myWalletAddress, 'Public key goes here', 10);
+const tx1 = new Transation(myWalletAddress, 'Public key goes here', 10, Date.now());
 tx1.signTransaction(myKey);
 chikeCoin.addTransaction(tx1);
 
@@ -19,7 +19,7 @@ console.log('\nStarting the miner...');
 chikeCoin.minePendingTransactions(myWalletAddress);
 
 
-const tx2 = new Transation(myWalletAddress, 'Public key goes here', 20);
+const tx2 = new Transation(myWalletAddress, 'Public key goes here', 20, Date.now());
 tx2.signTransaction(myKey);
 chikeCoin.addTransaction(tx2);
 

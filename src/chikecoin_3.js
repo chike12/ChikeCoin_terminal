@@ -5,10 +5,11 @@ const EC = require('elliptic').ec;
 const ec = new EC('secp256k1');
 
 class Transation {
-    constructor(fromAddress, toAddress, amount) {
+    constructor(fromAddress, toAddress, amount, timestamp) {
         this.fromAddress = fromAddress;
         this.toAddress = toAddress;
         this.amount = amount;
+        this.timestamp = timestamp;
     }
 
     calculateHash() {
@@ -91,7 +92,7 @@ class Blockchain {
     }*/
 
     minePendingTransactions(miningRewardAddress) {
-        const rewardTx = new Transation(null, miningRewardAddress, this.miningReward);
+        const rewardTx = new Transation(null, miningRewardAddress, this.miningReward, Date.now());
         this.pendingTransactions.push(rewardTx);
 
         let block = new Block(Date.now(), this.pendingTransactions, this.getLatestBlock().hash);
