@@ -4,7 +4,7 @@ const SHA256 = require('crypto-js/sha256');
 const EC = require('elliptic').ec;
 const ec = new EC('secp256k1');
 
-class Transation {
+class Transaction {
     constructor(fromAddress, toAddress, amount, timestamp) {
         this.fromAddress = fromAddress;
         this.toAddress = toAddress;
@@ -92,7 +92,7 @@ class Blockchain {
     }*/
 
     minePendingTransactions(miningRewardAddress) {
-        const rewardTx = new Transation(null, miningRewardAddress, this.miningReward, Date.now());
+        const rewardTx = new Transaction(null, miningRewardAddress, this.miningReward, Date.now());
         this.pendingTransactions.push(rewardTx);
 
         let block = new Block(Date.now(), this.pendingTransactions, this.getLatestBlock().hash);
@@ -158,4 +158,4 @@ class Blockchain {
 }
 
 module.exports.Blockchain = Blockchain;
-module.exports.Transation = Transation;
+module.exports.Transaction = Transaction;
