@@ -56,7 +56,6 @@ class Block {
             this.nonce++;
             this.hash = this.calculateHash();
         }
-        console.log("Block mined: " + this.hash);
     }
 
     hasValidTransaction() {
@@ -98,7 +97,6 @@ class Blockchain {
         let block = new Block(Date.now(), this.pendingTransactions, this.getLatestBlock().hash);
         block.mineBlock(this.difficulty);
 
-        console.log("Block successfully mined!");
         this.chain.push(block);
 
         this.pendingTransactions = []
